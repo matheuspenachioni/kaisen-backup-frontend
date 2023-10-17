@@ -68,6 +68,10 @@ input[type="file"] {
 /* Estilo para telas médias */
 @media (min-width: 768px) {
 
+    .chap-buttons{
+        justify-content: initial;
+    }
+    
     .input-column,
     .image-column {
         width: 50%;
@@ -76,10 +80,6 @@ input[type="file"] {
 
 /* Estilo para telas grandes */
 @media (min-width: 1200px) {
-
-    .chap-buttons{
-        justify-content: initial;
-    }
 
     .input-column,
     .image-column {
