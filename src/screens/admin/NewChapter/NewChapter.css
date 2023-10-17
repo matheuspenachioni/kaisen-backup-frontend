@@ -8,6 +8,12 @@
     margin: .5rem;
 }
 
+.chap-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
 #chap-title,
 #chap-subtitle,
 .chap-page {
@@ -70,6 +76,10 @@ input[type="file"] {
 
 /* Estilo para telas grandes */
 @media (min-width: 1200px) {
+
+    .chap-buttons{
+        justify-content: initial;
+    }
 
     .input-column,
     .image-column {

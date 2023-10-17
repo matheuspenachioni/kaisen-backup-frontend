@@ -15,6 +15,10 @@
             setPages([...pages, null]);
         };
 
+        const removePage = () => {
+            pages.length > 1 && setPages(pages.slice(0, -1));
+        }
+
         return (
             <main>
                 <div>
@@ -33,7 +37,10 @@
                             <input type="text" id="chap-subtitle" placeholder="A Batalha na Terra Assombrada de Shinjuku (17)" />
                         </div>
                     </div>
-                    <button onClick={addPage}>Adicionar 1 Página</button>
+                    <div className='chap-buttons'>
+                        <button onClick={addPage}>Adicionar Página</button>
+                        <button onClick={removePage}>Remover Página</button>
+                    </div>
                     <div className="preview-container">
                         <div className="input-column">
                             {pages.map((page, index) => (
