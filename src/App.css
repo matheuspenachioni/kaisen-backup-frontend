@@ -1,0 +1,78 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+body {
+  margin: 0;
+}
+
+/* Elementos de Texto */
+@font-face {
+  font-family: 'JujutsuKaisen';
+  src: url('./assets/fonts/JujutsuKaisen.ttf') format('truetype');
+}
+
+.titles-group {
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin-bottom: .5rem;
+}
+
+.subtitle {
+  color: #cccccc;
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+.jujutsu-font {
+  font-family: 'JujutsuKaisen', sans-serif;
+  text-shadow: 0px .5px 0px #d6cd80;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #d6cd80;
+}
+
+button:focus,
+button:focus-visible {
+  border-color: #d6cd80;
+}
+
+/* Estilo padrão (para telas pequenas) */
+main {
+  margin: 20px auto;
+  margin-top: 0;
+  width: 90% !important;
+  padding: 15px !important;
+  color: #fff;
+}
+
+/* Estilo para telas médias */
+@media (min-width: 768px) {
+  main {
+    width: 70% !important;
+  }
+}
+
+/* Estilo para telas grandes */
+@media (min-width: 1200px) {
+  main {
+    width: 60% !important;
+  }
+}
