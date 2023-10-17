@@ -1,0 +1,9 @@
+.discord-icon, .facebook-icon, 
+.telegram-icon, .twitter-icon {
+    width: 4rem;
+    margin: 0 1rem;
+}
+
+.icon:hover {
+    transform: scale(1.05);
+}
