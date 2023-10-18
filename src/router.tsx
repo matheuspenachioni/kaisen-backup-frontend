@@ -37,7 +37,7 @@ const RouterAllRoutes = React.memo(function RouterRoutes() {
 			<Suspense fallback={<div>Loading...</div>}>
 				<Routes>
 					{renderRoutes()}
-					<Route path="*" element={<div>Loading...</div>} />
+					<Route path="*" element={<div>404 not found</div>} />
 				</Routes>
 			</Suspense>
 		</main>
