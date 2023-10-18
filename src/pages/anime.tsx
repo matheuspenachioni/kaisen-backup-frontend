@@ -22,7 +22,7 @@ function Anime() {
 			<div className="anime-group">
 				<div className="anime-card">
 					<h4>
-						<a href={animeLink} target="_blank">
+						<a rel="noreferrer" href={animeLink} target="_blank">
 							Jujutsu Kaisen 0
 						</a>
 					</h4>
@@ -30,7 +30,7 @@ function Anime() {
 				</div>
 				<div className="anime-card">
 					<h4>
-						<a href={animeLink} target="_blank">
+						<a rel="noreferrer" href={animeLink} target="_blank">
 							Jujutsu Kaisen S1
 						</a>
 					</h4>
@@ -38,7 +38,7 @@ function Anime() {
 				</div>
 				<div className="anime-card">
 					<h4>
-						<a href={animeLink} target="_blank">
+						<a rel="noreferrer" href={animeLink} target="_blank">
 							Jujutsu Kaisen S2
 						</a>
 					</h4>

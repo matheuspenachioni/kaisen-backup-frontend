@@ -2,7 +2,7 @@ import './Chapter.css'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
-import { useChapters } from '@hooks/chapters'
+import { useChapters } from '@hooks/useChapters'
 
 function Chapter() {
 	const VIEW_MODE = {
@@ -52,6 +52,7 @@ function Chapter() {
 			</div>
 			<div>
 				<button
+					type="button"
 					className="horizontal-button"
 					onClick={() => handleChangeViewMode(VIEW_MODE.PAGE_BY_PAGE)}
 					style={viewMode === VIEW_MODE.PAGE_BY_PAGE ? { background: 'gray', color: 'white' } : {}}
@@ -59,6 +60,7 @@ function Chapter() {
 					Leitura Horizontal
 				</button>
 				<button
+					type="button"
 					className="vertical-button"
 					onClick={() => handleChangeViewMode(VIEW_MODE.ALL_AT_ONCE)}
 					style={viewMode === VIEW_MODE.ALL_AT_ONCE ? { background: 'gray', color: 'white' } : {}}
@@ -66,7 +68,7 @@ function Chapter() {
 					Leitura Vertical
 				</button>
 
-				<select className="chapter-select" value={currentChapter.id} onChange={(e) => handleChapterChange}>
+				<select className="chapter-select" value={currentChapter.id} onChange={handleChapterChange}>
 					{chapters.map((chapter) => (
 						<option key={chapter.id} value={chapter.id}>
 							{chapter.title}
@@ -82,10 +84,15 @@ function Chapter() {
 						src={currentChapter.pages[currentPage].source}
 						alt={`Página ${currentPage + 1}`}
 					/>
-					<button className="prev-button" onClick={prevPage} disabled={currentPage === 0}>
+					<button type="button" className="prev-button" onClick={prevPage} disabled={currentPage === 0}>
 						<FaAngleLeft />
 					</button>
-					<button className="next-button" onClick={nextPage} disabled={currentPage === currentChapter.pages.length - 1}>
+					<button
+						type="button"
+						className="next-button"
+						onClick={nextPage}
+						disabled={currentPage === currentChapter.pages.length - 1}
+					>
 						<FaAngleRight />
 					</button>
 				</div>

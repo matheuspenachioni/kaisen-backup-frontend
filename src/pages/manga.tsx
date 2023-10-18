@@ -1,7 +1,7 @@
 import './Manga.css'
 import { Link } from 'react-router-dom'
-import { useVolumes } from '@hooks/volumes'
-import { useChapters } from '@hooks/chapters'
+import { useVolumes } from '@hooks/useVolumes'
+import { useChapters } from '@hooks/useChapters'
 import { FaRegFileAlt } from 'react-icons/fa'
 
 function Manga() {

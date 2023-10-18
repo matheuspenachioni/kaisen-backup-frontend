@@ -28,7 +28,7 @@ function Login() {
 				<input type="password" id="password" />
 			</div>
 			<div className="form-button-group">
-				<button>Entrar</button>
+				<button type="button">Entrar</button>
 				<Link to="#">Recuperar senha</Link>
 			</div>
 		</main>

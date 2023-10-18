@@ -5,7 +5,7 @@ import { ChangeEvent, useState } from 'react'
 function NewChapter() {
 	const [pages, setPages] = useState<string[]>([])
 
-	const handleImageChange = (event: ChangeEvent<HTMLInputElement>, index: number) => {
+	const handleImageChange = (event: ChangeEvent<HTMLInputElement>, _index: number) => {
 		const url = event.target.value
 		const updatedPages = [...pages, url]
 		setPages(updatedPages)
@@ -43,8 +43,12 @@ function NewChapter() {
 							</div>
 						</div>
 						<div className="chap-buttons">
-							<button onClick={addPage}>Adicionar Página</button>
-							<button onClick={removePage}>Remover Página</button>
+							<button type="button" onClick={addPage}>
+								Adicionar Página
+							</button>
+							<button type="button" onClick={removePage}>
+								Remover Página
+							</button>
 						</div>
 						<div className="preview-container">
 							<div className="input-column">

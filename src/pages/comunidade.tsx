@@ -11,16 +11,16 @@ function Community() {
 			</span>
 			<div>
 				<h1 className="title">Redes Sociais</h1>
-				<a href="https://discord.gg/backup-jujutsu-kaisen-brasil-1133246540044054601" target="_blank">
+				<a rel="noreferrer" href="https://discord.gg/backup-jujutsu-kaisen-brasil-1133246540044054601" target="_blank">
 					<img className="icon discord-icon" src="./src/assets/icons/discord.png" alt="Logo do Discord" />
 				</a>
-				<a href="https://www.facebook.com/kaisenbackup" target="_blank">
+				<a rel="noreferrer" href="https://www.facebook.com/kaisenbackup" target="_blank">
 					<img className="icon discord-icon" src="./src/assets/icons/facebook.webp" alt="Logo do Facebook" />
 				</a>
-				<a href="https://t.me/+FCinTLV4RQk5N2Rh" target="_blank">
+				<a rel="noreferrer" href="https://t.me/+FCinTLV4RQk5N2Rh" target="_blank">
 					<img className="icon telegram-icon" src="./src/assets/icons/telegram.webp" alt="Logo do Telegram" />
 				</a>
-				<a href="https://x.com/kaisenbackup" target="_blank">
+				<a rel="noreferrer" href="https://x.com/kaisenbackup" target="_blank">
 					<img className="icon twitter-icon" src="./src/assets/icons/x.png" alt="Logo do X" />
 				</a>
 			</div>
