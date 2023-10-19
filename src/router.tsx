@@ -23,8 +23,6 @@ const routes = Object.keys(
 	}
 })
 
-console.log(routes)
-
 const RouterAllRoutes = React.memo(function RouterRoutes() {
 	function renderRoutes() {
 		return routes.map(({ path, component: Component }) => {
