@@ -2,7 +2,7 @@ import { AuthRequired } from '@components/AuthRequired/AuthRequired'
 import './NewPost.css'
 import { ChangeEvent, useState } from 'react'
 
-function NewPost() {
+export function NewPost() {
 	const [imagePreview, setImagePreview] = useState<string | ArrayBuffer | null>(null)
 
 	const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -55,5 +55,3 @@ function NewPost() {
 		</AuthRequired>
 	)
 }
-
-export default NewPost

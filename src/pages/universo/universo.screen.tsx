@@ -1,4 +1,4 @@
-function Universe() {
+export function Universe() {
 	return (
 		<main>
 			<h1 className="title">Universo</h1>
@@ -6,5 +6,3 @@ function Universe() {
 		</main>
 	)
 }
-
-export default Universe

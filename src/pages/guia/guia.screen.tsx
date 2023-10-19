@@ -1,6 +1,6 @@
 import { FaRegFileAlt } from 'react-icons/fa'
 
-function Guide() {
+export function Guide() {
 	return (
 		<main className="guide">
 			<div>
@@ -48,5 +48,3 @@ function Guide() {
 		</main>
 	)
 }
-
-export default Guide

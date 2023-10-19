@@ -2,7 +2,7 @@ import { AuthRequired } from '@components/AuthRequired/AuthRequired'
 import './NewChapter.css'
 import { ChangeEvent, useState } from 'react'
 
-function NewChapter() {
+export function NewChapter() {
 	const [pages, setPages] = useState<string[]>([])
 
 	const handleImageChange = (event: ChangeEvent<HTMLInputElement>, _index: number) => {
@@ -79,4 +79,3 @@ function NewChapter() {
 		</AuthRequired>
 	)
 }
-export default NewChapter

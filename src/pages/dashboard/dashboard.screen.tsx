@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaPen, FaTimes, FaRegClock } from 'react-icons/fa'
 import { AuthRequired } from '@components/AuthRequired/AuthRequired'
 
-function Dashboard() {
+export function Dashboard() {
 	return (
 		<AuthRequired>
 			{() => (
@@ -141,5 +141,3 @@ function Dashboard() {
 		</AuthRequired>
 	)
 }
-
-export default Dashboard

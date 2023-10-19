@@ -1,45 +1,47 @@
+import Navbar from '@components/Navbar/Navbar'
 import React, { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import {
+	Anime,
+	Chapter,
+	Community,
+	Guide,
+	Home,
+	Login,
+	Manga,
+	NewChapter,
+	NewPost,
+	Universe,
+	Dashboard
+} from '@pages/index'
+import Footer from '@components/Footer/Footer'
+import Loading from './screens/loading/Loading/Loading'
 
-const routes = Object.keys(
-	import.meta.glob('/src/pages/**/[a-z[]*.tsx', {
-		eager: true
-	})
-).map((route) => {
-	const path = route
-		.replace(/\/src\/pages|index|\.tsx$/g, '')
-		.replace(/\[\.{3}.+\]/, '*')
-		.replace(/\[(.+)\]/, ':$1')
-	const Component = React.lazy(
-		() =>
-			import(
-				/* @vite-ignore */
-				`${route}`
-			)
-	)
-	return {
-		component: Component,
-		path
-	}
-})
-
-const RouterAllRoutes = React.memo(function RouterRoutes() {
-	function renderRoutes() {
-		return routes.map(({ path, component: Component }) => {
-			return <Route key={path} path={path} element={<Component />} />
-		})
-	}
-
+function RouterAllRoutes() {
 	return (
-		<main>
-			<Suspense fallback={<div>Loading...</div>}>
+		<>
+			<Navbar />
+			<Suspense fallback={<Loading />}>
 				<Routes>
-					{renderRoutes()}
-					<Route path="*" element={<div>404 not found</div>} />
+					{/* User Routes */}
+					<Route path="/" element={<Home />} />
+					<Route path="/anime" element={<Anime />} />
+					<Route path="/manga" element={<Manga />} />
+					<Route path="/comunidade" element={<Community />} />
+					<Route path="/guia" element={<Guide />} />
+					<Route path="/universo" element={<Universe />} />
+					<Route path="/chapter/:chapterId" element={<Chapter />} />
+					{/* Admin Routes */}
+					<Route path="/login" element={<Login />} />
+					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/novo-post" element={<NewPost />} />
+					<Route path="/novo-capitulo" element={<NewChapter />} />
+					{/* 1- Fazer um AuthGuard para essas 3 rotas */}
 				</Routes>
 			</Suspense>
-		</main>
+			<Footer />
+		</>
 	)
-})
+}
 
 export { RouterAllRoutes }

@@ -1,7 +1,7 @@
 import './Anime.css'
 import { FaRegFileAlt } from 'react-icons/fa'
 
-function Anime() {
+export function Anime() {
 	const animeLink = 'https://www.crunchyroll.com/pt-br/series/GRDV0019R/jujutsu-kaisen'
 
 	return (
@@ -48,5 +48,3 @@ function Anime() {
 		</main>
 	)
 }
-
-export default Anime

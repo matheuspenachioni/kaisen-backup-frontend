@@ -2,7 +2,7 @@ import { useAuth } from '@hooks/useAuth'
 import './Login.css'
 import { Link, Navigate } from 'react-router-dom'
 
-function Login() {
+export function Login() {
 	const { user, loading } = useAuth()
 
 	if (user.id) {
@@ -34,5 +34,3 @@ function Login() {
 		</main>
 	)
 }
-
-export default Login

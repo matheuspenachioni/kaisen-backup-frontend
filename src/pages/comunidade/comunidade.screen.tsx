@@ -1,6 +1,6 @@
 import './Community.css'
 
-function Community() {
+export function Community() {
 	return (
 		<main>
 			<h1 className="title">Comunidade</h1>
@@ -27,5 +27,3 @@ function Community() {
 		</main>
 	)
 }
-
-export default Community

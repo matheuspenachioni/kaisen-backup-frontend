@@ -4,7 +4,7 @@ import { useVolumes } from '@hooks/useVolumes'
 import { useChapters } from '@hooks/useChapters'
 import { FaRegFileAlt } from 'react-icons/fa'
 
-function Manga() {
+export function Manga() {
 	const volumes = useVolumes()
 	const chapters = useChapters()
 	return (
@@ -55,5 +55,3 @@ function Manga() {
 		</main>
 	)
 }
-
-export default Manga

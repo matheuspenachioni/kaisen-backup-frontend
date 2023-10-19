@@ -1,6 +1,6 @@
 import './index.css'
 
-function Home() {
+export function Home() {
 	return (
 		<main>
 			<div>
@@ -35,5 +35,3 @@ function Home() {
 		</main>
 	)
 }
-
-export default Home

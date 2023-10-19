@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import { useChapters } from '@hooks/useChapters'
 
-function Chapter() {
+export function Chapter() {
 	const VIEW_MODE = {
 		PAGE_BY_PAGE: 'page-by-page',
 		ALL_AT_ONCE: 'all-at-once'
@@ -108,5 +108,3 @@ function Chapter() {
 		</main>
 	)
 }
-
-export default Chapter
