@@ -5,11 +5,13 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 import { useAuth } from '@hooks/useAuth'
 
 function Navbar() {
-	const navRef = useRef()
+	const navRef = useRef<HTMLElement | null>(null)
 	const { user } = useAuth()
 
 	const showNavbar = () => {
-		navRef.current.classList.toggle('responsive_nav')
+		if (navRef.current) {
+			navRef.current.classList.toggle('responsive_nav')
+		}
 	}
 
 	return (
