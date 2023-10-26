@@ -1,12 +1,15 @@
 import './Manga.css'
-import { Link } from 'react-router-dom'
 import { useVolumes } from '@hooks/useVolumes'
 import { useChapters } from '@hooks/useChapters'
 import { FaRegFileAlt } from 'react-icons/fa'
+import { useUserHistory } from '@hooks/useUserHistory'
+import { MangaChapterDisplay } from '@components/index'
 
 export function Manga() {
 	const volumes = useVolumes()
 	const chapters = useChapters()
+	const history = useUserHistory()
+
 	return (
 		<main className="manga">
 			<div>
@@ -31,12 +34,14 @@ export function Manga() {
 					{chapters.map(
 						(chapter) =>
 							chapter.pages.length > 0 && (
-								<div key={chapter.id} className="chapter-preview">
-									<img className="chapter-image" src={chapter.pages[0].source} alt={`Capa do ${chapter.title}`} />
-									<Link className="chapter-link" to={`/capitulo/${chapter.id}`}>
-										{chapter.title}
-									</Link>
-								</div>
+								<MangaChapterDisplay
+									alt={`Capitulo ${chapter.title}`}
+									image={chapter.pages[0].source}
+									link={chapter.id}
+									pagesRead={history.find((item) => item.id === chapter.id)?.pagesRead || 0}
+									key={chapter.id}
+									pagesTotal={chapter.pages.length}
+								/>
 							)
 					)}
 				</div>
