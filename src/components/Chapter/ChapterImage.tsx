@@ -28,8 +28,9 @@ export function ChapterImage({
 						const chapterHistory = parsedHistory.find((searchChapter) => searchChapter.id === chapter)
 						if (!chapterHistory) return
 						if (chapterHistory.pagesRead >= index) return
+						const historyWithoutCurrentChapter = parsedHistory.filter((searchChapter) => searchChapter.id !== chapter)
 						const newHistory = JSON.stringify([
-							...parsedHistory.filter((searchChapter) => searchChapter.id !== chapter),
+							...historyWithoutCurrentChapter,
 							{ ...chapterHistory, pagesRead: index }
 						])
 						localStorage.setItem('chaptersHistory', newHistory)

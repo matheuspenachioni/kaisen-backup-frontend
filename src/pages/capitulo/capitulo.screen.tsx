@@ -45,7 +45,7 @@ export function Chapter() {
 		if (pageRef) {
 			handleChapterHistory()
 		}
-	}, [viewMode])
+	}, [])
 
 	const handleChapterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const selectedChapter = chapters.find((chapter) => chapter.id === e.target.value)
