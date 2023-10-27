@@ -1,3 +1,4 @@
+import { LOGIN_ROUTE } from '@constants/routes'
 import { useAuth } from '@hooks/useAuth'
 import { Navigate } from 'react-router-dom'
 export function AuthRequired({ children }: { children: () => React.ReactNode }) {
@@ -8,7 +9,7 @@ export function AuthRequired({ children }: { children: () => React.ReactNode }) 
   }
 
   if (!user.id) {
-    return <Navigate to="/login" replace />
+    return <Navigate to={LOGIN_ROUTE} replace />
   }
 
   return <>{children()}</>

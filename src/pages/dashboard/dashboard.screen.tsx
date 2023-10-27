@@ -2,6 +2,7 @@ import './Dashboard.css'
 import { Link } from 'react-router-dom'
 import { FaPen, FaTimes, FaRegClock } from 'react-icons/fa'
 import { AuthRequired } from '@components/AuthRequired/AuthRequired'
+import { NEW_CHAPTER_ROUTE, NEW_POST_ROUTE } from '@constants/routes'
 
 export function Dashboard() {
   return (
@@ -16,10 +17,10 @@ export function Dashboard() {
               veredito...? Natural! Rodrigo Góes, out...
             </span>
             <div className="admin-buttons">
-              <Link className="admin-links" to="/novo-capitulo">
+              <Link className="admin-links" to={NEW_CHAPTER_ROUTE}>
                 Novo Capítulo
               </Link>
-              <Link className="admin-links" to="/novo-post">
+              <Link className="admin-links" to={NEW_POST_ROUTE}>
                 Nova Postagem
               </Link>
             </div>

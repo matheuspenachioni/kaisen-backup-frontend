@@ -1,12 +1,13 @@
 import { useAuth } from '@hooks/useAuth'
 import './Login.css'
 import { Link, Navigate } from 'react-router-dom'
+import { DASHBOARD_ROUTE } from '@constants/routes'
 
 export function Login() {
   const { user, loading } = useAuth()
 
   if (user.id) {
-    return <Navigate to="/dashboard" replace />
+    return <Navigate to={DASHBOARD_ROUTE} replace />
   }
 
   if (loading) {

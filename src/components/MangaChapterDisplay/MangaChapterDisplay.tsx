@@ -2,6 +2,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router-dom'
 import { ReactComponent as CheckIcon } from '@icons/check-icon.svg'
 import s from './MangaChapterDisplay.module.css'
+import { CHAPTER_ROUTE } from '@constants/routes'
 
 export function MangaChapterDisplay({
   alt,
@@ -17,7 +18,7 @@ export function MangaChapterDisplay({
   pagesTotal: number
 }) {
   return (
-    <Link className={s.container} to={`/capitulo/${link}`}>
+    <Link className={s.container} to={CHAPTER_ROUTE(link)}>
       <LazyLoadImage alt={alt} src={image} width={200} height={250} className={s.image} />
       <div>
         {pagesRead === pagesTotal ? (
