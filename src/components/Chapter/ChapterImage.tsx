@@ -23,8 +23,6 @@ export function ChapterImage({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          console.log(entry)
-          console.log(chapter, index)
           updateChapterInHistory(chapter, index)
         }
       },
