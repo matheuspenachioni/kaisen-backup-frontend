@@ -8,7 +8,7 @@ import { MangaChapterDisplay } from '@components/index'
 export function Manga() {
   const volumes = useVolumes()
   const chapters = useChapters()
-  const history = useUserHistory()
+  const { parsedHistory } = useUserHistory()
 
   return (
     <main className="manga">
@@ -38,7 +38,7 @@ export function Manga() {
                   alt={`Capitulo ${chapter.title}`}
                   image={chapter.pages[0].source}
                   link={chapter.id}
-                  pagesRead={history.find((item) => item.id === chapter.id)?.pagesRead || 0}
+                  pagesRead={parsedHistory.find((item) => item.id === chapter.id)?.pagesRead || 0}
                   key={chapter.id}
                   pagesTotal={chapter.pages.length}
                 />

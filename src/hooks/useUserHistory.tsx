@@ -16,14 +16,14 @@ export type ChapterType = {
 }
 
 export function useUserHistory() {
-  const history = localStorage.getItem('chaptersHistory')
-  if (!history) {
-    localStorage.setItem('chaptersHistory', JSON.stringify([]))
+  function getParsedHistory() {
+    const history = localStorage.getItem('chaptersHistory')
+    const parsedHistory = JSON.parse(history || '[]') as ChapterHistoryType[]
+    return parsedHistory
   }
 
-  const parsedHistory = JSON.parse(history || '[]') as ChapterHistoryType[]
-
   function addChapterToHistory(currentChapter: ChapterType) {
+    const parsedHistory = getParsedHistory()
     const chapterHistory = parsedHistory.some((chapter) => chapter.id === currentChapter.id)
     if (!chapterHistory) {
       const newHistory = JSON.stringify([
@@ -36,6 +36,7 @@ export function useUserHistory() {
   }
 
   function updateChapterInHistory(chapterId: string, pagesRead: number) {
+    const parsedHistory = getParsedHistory()
     const chapterHistory = parsedHistory.find((searchChapter) => searchChapter.id === chapterId)
     if (!chapterHistory) return
     if (chapterHistory.pagesRead >= pagesRead) return
@@ -43,5 +44,5 @@ export function useUserHistory() {
     const newHistory = JSON.stringify([...historyWithoutCurrentChapter, { ...chapterHistory, pagesRead: pagesRead }])
     localStorage.setItem('chaptersHistory', newHistory)
   }
-  return { parsedHistory, addChapterToHistory, updateChapterInHistory }
+  return { parsedHistory: getParsedHistory(), addChapterToHistory, updateChapterInHistory }
 }
