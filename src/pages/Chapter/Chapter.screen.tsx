@@ -27,23 +27,11 @@ export function Chapter() {
   const [zoom, setZoom] = useState(1)
   const [currentPage, setCurrentPage] = useState(0)
   const [viewMode, setViewMode] = useState(preferredViewMode || VIEW_MODE.PAGE_BY_PAGE)
-  const parsedHistory = useUserHistory()
-
-  function handleChapterHistory() {
-    const chapterHistory = parsedHistory.some((chapter) => chapter.id === currentChapter.id)
-    if (!chapterHistory) {
-      const newHistory = JSON.stringify([
-        ...parsedHistory,
-        { id: currentChapter.id, order: currentChapter.order, pagesRead: 1 }
-      ])
-      localStorage.setItem('chaptersHistory', newHistory)
-      return
-    }
-  }
+  const { addChapterToHistory } = useUserHistory()
 
   useEffect(() => {
     if (pageRef) {
-      handleChapterHistory()
+      addChapterToHistory(currentChapter)
     }
   }, [])
 

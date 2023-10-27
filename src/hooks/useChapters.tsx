@@ -1,4 +1,6 @@
-export function useChapters() {
+import { ChapterType } from './useUserHistory'
+
+export function useChapters(): ChapterType[] {
   return [
     {
       id: '236',

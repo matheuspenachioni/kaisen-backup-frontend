@@ -1,6 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useRef, useEffect } from 'react'
-import { ChapterHistoryType } from '@hooks/index'
+import { useUserHistory } from '@hooks/index'
 import s from './ChapterImage.module.css'
 
 export function ChapterImage({
@@ -16,25 +16,14 @@ export function ChapterImage({
   chapter: string
   zoom: number
 }) {
+  const { updateChapterInHistory } = useUserHistory()
   const imageRef = useRef<HTMLImageElement>(null)
   useEffect(() => {
     if (!imageRef) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const history = localStorage.getItem('chaptersHistory')
-          if (history) {
-            const parsedHistory = JSON.parse(history) as ChapterHistoryType[]
-            const chapterHistory = parsedHistory.find((searchChapter) => searchChapter.id === chapter)
-            if (!chapterHistory) return
-            if (chapterHistory.pagesRead >= index) return
-            const historyWithoutCurrentChapter = parsedHistory.filter((searchChapter) => searchChapter.id !== chapter)
-            const newHistory = JSON.stringify([
-              ...historyWithoutCurrentChapter,
-              { ...chapterHistory, pagesRead: index }
-            ])
-            localStorage.setItem('chaptersHistory', newHistory)
-          }
+          updateChapterInHistory(chapter, index)
         }
       },
       { rootMargin: '-400px' }
