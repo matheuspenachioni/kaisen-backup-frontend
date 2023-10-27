@@ -1,49 +1,49 @@
 .post-input label {
-    display: block;
-    margin: .5rem;
+  display: block;
+  margin: 0.5rem;
 }
 
 .new-post-form label {
-    display: block;
-    margin: .5rem;
+  display: block;
+  margin: 0.5rem;
 }
 
 #post-title,
 #post-content {
-    box-sizing: border-box;
-    /* Inclui padding na largura total */
-    padding: 1rem;
-    width: 100%;
-    margin-bottom: .5rem;
+  box-sizing: border-box;
+  /* Inclui padding na largura total */
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 #post-content {
-    height: 10rem;
+  height: 10rem;
 }
 
-input[type="file"] {
-    display: none;
+input[type='file'] {
+  display: none;
 }
 
 .thumbnail-input {
-    box-sizing: border-box;
-    padding: 1rem;
-    width: 100%;
-    max-width: 100%;
-    background-color: #333;
-    border-radius: 0.5rem;
-    color: #FFF;
-    text-align: center;
-    display: block;
-    margin: 0 !important;
-    cursor: pointer;
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  max-width: 100%;
+  background-color: #333;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-align: center;
+  display: block;
+  margin: 0 !important;
+  cursor: pointer;
 }
 
 .preview-container {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .image-preview {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }

@@ -10,138 +10,138 @@ import { ChapterConfigs } from '@components/index'
 import { motion } from 'framer-motion'
 
 export const VIEW_MODE = {
-	PAGE_BY_PAGE: 'page-by-page',
-	ALL_AT_ONCE: 'all-at-once'
+  PAGE_BY_PAGE: 'page-by-page',
+  ALL_AT_ONCE: 'all-at-once'
 } as const
 
 export type ViewModeKeys = keyof typeof VIEW_MODE
 
 export function Chapter() {
-	const chapters = useChapters()
-	const { id } = useParams()
-	const pageRef = useRef<HTMLDivElement>(null)
-	const initialChapter = chapters.find((chapter) => chapter.id.toString() === id) || chapters[chapters.length - 1]
-	const preferredViewMode = localStorage.getItem('viewMode') as (typeof VIEW_MODE)[ViewModeKeys]
+  const chapters = useChapters()
+  const { id } = useParams()
+  const pageRef = useRef<HTMLDivElement>(null)
+  const initialChapter = chapters.find((chapter) => chapter.id.toString() === id) || chapters[chapters.length - 1]
+  const preferredViewMode = localStorage.getItem('viewMode') as (typeof VIEW_MODE)[ViewModeKeys]
 
-	const [currentChapter, setCurrentChapter] = useState(initialChapter)
-	const [zoom, setZoom] = useState(1)
-	const [currentPage, setCurrentPage] = useState(0)
-	const [viewMode, setViewMode] = useState(preferredViewMode || VIEW_MODE.PAGE_BY_PAGE)
-	const parsedHistory = useUserHistory()
+  const [currentChapter, setCurrentChapter] = useState(initialChapter)
+  const [zoom, setZoom] = useState(1)
+  const [currentPage, setCurrentPage] = useState(0)
+  const [viewMode, setViewMode] = useState(preferredViewMode || VIEW_MODE.PAGE_BY_PAGE)
+  const parsedHistory = useUserHistory()
 
-	function handleChapterHistory() {
-		const chapterHistory = parsedHistory.some((chapter) => chapter.id === currentChapter.id)
-		if (!chapterHistory) {
-			const newHistory = JSON.stringify([
-				...parsedHistory,
-				{ id: currentChapter.id, order: currentChapter.order, pagesRead: 1 }
-			])
-			localStorage.setItem('chaptersHistory', newHistory)
-			return
-		}
-	}
+  function handleChapterHistory() {
+    const chapterHistory = parsedHistory.some((chapter) => chapter.id === currentChapter.id)
+    if (!chapterHistory) {
+      const newHistory = JSON.stringify([
+        ...parsedHistory,
+        { id: currentChapter.id, order: currentChapter.order, pagesRead: 1 }
+      ])
+      localStorage.setItem('chaptersHistory', newHistory)
+      return
+    }
+  }
 
-	useEffect(() => {
-		if (pageRef) {
-			handleChapterHistory()
-		}
-	}, [])
+  useEffect(() => {
+    if (pageRef) {
+      handleChapterHistory()
+    }
+  }, [])
 
-	const handleChapterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		const selectedChapter = chapters.find((chapter) => chapter.id === e.target.value)
-		setCurrentChapter(selectedChapter || chapters[chapters.length - 1])
-	}
+  const handleChapterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedChapter = chapters.find((chapter) => chapter.id === e.target.value)
+    setCurrentChapter(selectedChapter || chapters[chapters.length - 1])
+  }
 
-	const nextPage = useCallback(() => {
-		if (currentPage < currentChapter.pages.length - 1) {
-			setCurrentPage(currentPage + 1)
-		}
-	}, [currentPage, currentChapter.pages.length])
+  const nextPage = useCallback(() => {
+    if (currentPage < currentChapter.pages.length - 1) {
+      setCurrentPage(currentPage + 1)
+    }
+  }, [currentPage, currentChapter.pages.length])
 
-	const prevPage = useCallback(() => {
-		if (currentPage > 0) {
-			setCurrentPage(currentPage - 1)
-		}
-	}, [currentPage])
+  const prevPage = useCallback(() => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1)
+    }
+  }, [currentPage])
 
-	const handleChangeViewMode = useCallback((viewMode: (typeof VIEW_MODE)[ViewModeKeys]) => {
-		setViewMode(viewMode)
-		localStorage.setItem('viewMode', viewMode)
-	}, [])
+  const handleChangeViewMode = useCallback((viewMode: (typeof VIEW_MODE)[ViewModeKeys]) => {
+    setViewMode(viewMode)
+    localStorage.setItem('viewMode', viewMode)
+  }, [])
 
-	const handleZoomChange = useCallback(
-		(zoomChange: 'positive' | 'negative') => {
-			if (zoomChange === 'positive') {
-				if (zoom >= 1) return
-				setZoom(zoom + 0.1)
-				return
-			}
-			if (zoom <= 0.8) return
-			setZoom(zoom - 0.1)
-		},
-		[zoom]
-	)
+  const handleZoomChange = useCallback(
+    (zoomChange: 'positive' | 'negative') => {
+      if (zoomChange === 'positive') {
+        if (zoom >= 1) return
+        setZoom(zoom + 0.1)
+        return
+      }
+      if (zoom <= 0.8) return
+      setZoom(zoom - 0.1)
+    },
+    [zoom]
+  )
 
-	return (
-		<div className={s.chapterContainer} ref={pageRef}>
-			<ChapterConfigs
-				currentZoom={zoom}
-				onChangeZoom={handleZoomChange}
-				currentViewMode={viewMode}
-				onChangeViewMode={handleChangeViewMode}
-			/>
-			<div>
-				<h1 className="title">{currentChapter.subtitle}</h1>
-			</div>
-			<div>
-				<select className="chapter-select" value={currentChapter.id} onChange={handleChapterChange}>
-					{chapters.map((chapter) => (
-						<option key={chapter.id} value={chapter.id}>
-							{chapter.title}
-						</option>
-					))}
-				</select>
-			</div>
+  return (
+    <div className={s.chapterContainer} ref={pageRef}>
+      <ChapterConfigs
+        currentZoom={zoom}
+        onChangeZoom={handleZoomChange}
+        currentViewMode={viewMode}
+        onChangeViewMode={handleChangeViewMode}
+      />
+      <div>
+        <h1 className="title">{currentChapter.subtitle}</h1>
+      </div>
+      <div>
+        <select className="chapter-select" value={currentChapter.id} onChange={handleChapterChange}>
+          {chapters.map((chapter) => (
+            <option key={chapter.id} value={chapter.id}>
+              {chapter.title}
+            </option>
+          ))}
+        </select>
+      </div>
 
-			{viewMode === VIEW_MODE.PAGE_BY_PAGE && (
-				<div className={s.chapterWrapper}>
-					<ChapterImage
-						zoom={zoom}
-						chapter={currentChapter.id}
-						index={currentPage + 1}
-						image={currentChapter.pages[currentPage].source}
-						alt={`Página ${currentPage + 1}`}
-					/>
-					<motion.div className={s.buttonsChapterPage} initial={{ bottom: '0px' }} animate={{ bottom: '50px' }}>
-						<button type="button" className="prev-button" onClick={prevPage} disabled={currentPage === 0}>
-							<FaAngleLeft />
-						</button>
-						<button
-							type="button"
-							className="next-button"
-							onClick={nextPage}
-							disabled={currentPage === currentChapter.pages.length - 1}
-						>
-							<FaAngleRight />
-						</button>
-					</motion.div>
-				</div>
-			)}
+      {viewMode === VIEW_MODE.PAGE_BY_PAGE && (
+        <div className={s.chapterWrapper}>
+          <ChapterImage
+            zoom={zoom}
+            chapter={currentChapter.id}
+            index={currentPage + 1}
+            image={currentChapter.pages[currentPage].source}
+            alt={`Página ${currentPage + 1}`}
+          />
+          <motion.div className={s.buttonsChapterPage} initial={{ bottom: '0px' }} animate={{ bottom: '50px' }}>
+            <button type="button" className="prev-button" onClick={prevPage} disabled={currentPage === 0}>
+              <FaAngleLeft />
+            </button>
+            <button
+              type="button"
+              className="next-button"
+              onClick={nextPage}
+              disabled={currentPage === currentChapter.pages.length - 1}
+            >
+              <FaAngleRight />
+            </button>
+          </motion.div>
+        </div>
+      )}
 
-			{viewMode === VIEW_MODE.ALL_AT_ONCE && (
-				<div>
-					{currentChapter.pages.map((page, idx) => (
-						<ChapterImage
-							zoom={zoom}
-							chapter={currentChapter.id}
-							index={idx + 1}
-							key={idx}
-							image={page.source}
-							alt={`Página ${idx + 1}`}
-						/>
-					))}
-				</div>
-			)}
-		</div>
-	)
+      {viewMode === VIEW_MODE.ALL_AT_ONCE && (
+        <div>
+          {currentChapter.pages.map((page, idx) => (
+            <ChapterImage
+              zoom={zoom}
+              chapter={currentChapter.id}
+              index={idx + 1}
+              key={idx}
+              image={page.source}
+              alt={`Página ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  )
 }

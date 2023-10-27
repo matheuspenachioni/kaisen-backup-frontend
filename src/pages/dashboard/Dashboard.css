@@ -1,115 +1,115 @@
 .dashboard-cards {
-	padding-top: 1rem;
+  padding-top: 1rem;
 }
 
 .dashboard-container {
-	position: relative;
-	padding: 20px;
-	border: 1px solid #e0e0e0;
-	border-radius: 5px;
-	width: 300px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
+  position: relative;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .dashboard-container:hover {
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-	transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
 }
 
 .action-icons {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	display: flex;
-	gap: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .delete-icon {
-	cursor: pointer;
-	background-color: rgb(185, 31, 31);
-	border-radius: 50%;
-	padding: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: rgb(185, 31, 31);
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .edit-icon {
-	cursor: pointer;
-	background-color: rgb(32, 132, 226);
-	border-radius: 50%;
-	padding: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: rgb(32, 132, 226);
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .edit-icon:hover {
-	background-color: rgb(20, 96, 167);
+  background-color: rgb(20, 96, 167);
 }
 
 .delete-icon:hover {
-	background-color: rgb(155, 14, 14);
+  background-color: rgb(155, 14, 14);
 }
 
 h2 {
-	margin: 0;
-	margin-bottom: 15px;
-	font-size: 20px;
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
 .date-container {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .clock-icon {
-	margin-right: 5px;
-	font-size: 18px;
-	color: #999999;
+  margin-right: 5px;
+  font-size: 18px;
+  color: #999999;
 }
 
 .date-container span {
-	font-size: 16px;
-	color: #999999;
+  font-size: 16px;
+  color: #999999;
 }
 
 .dashboard-cards {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .dashboard-container {
-	flex: 1 1 calc(100% - 20px); /* Telas pequenas: 1 card por linha */
+  flex: 1 1 calc(100% - 20px); /* Telas pequenas: 1 card por linha */
 }
 
 @media (min-width: 600px) {
-	/* Telas médias */
-	.dashboard-container {
-		flex: 1 1 calc(50% - 20px); /* 2 cards por linha */
-	}
+  /* Telas médias */
+  .dashboard-container {
+    flex: 1 1 calc(50% - 20px); /* 2 cards por linha */
+  }
 }
 
 @media (min-width: 900px) {
-	/* Telas grandes */
-	.dashboard-container {
-		flex: 1 1 calc(33.3333% - 20px); /* 3 cards por linha */
-	}
+  /* Telas grandes */
+  .dashboard-container {
+    flex: 1 1 calc(33.3333% - 20px); /* 3 cards por linha */
+  }
 }
 
 .admin-buttons {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .admin-links {
-	width: calc(49% - 1rem);
-	text-align: center;
-	background-color: #353535;
-	padding: 0.5rem;
-	border-radius: 0.5rem;
-	text-decoration: none;
-	color: #d6cd80;
+  width: calc(49% - 1rem);
+  text-align: center;
+  background-color: #353535;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #d6cd80;
 }
