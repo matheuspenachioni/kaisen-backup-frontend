@@ -1,13 +1,10 @@
-import './Chapter.css'
-import s from './chapter.module.css'
+import styles from './Chapter.module.css'
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import { useChapters } from '@hooks/useChapters'
 import { ChapterImage } from '@components/Chapter/ChapterImage'
 import { useUserHistory } from '@hooks/useUserHistory'
 import { ChapterConfigs } from '@components/index'
-import { motion } from 'framer-motion'
 
 export const VIEW_MODE = {
 	PAGE_BY_PAGE: 'page-by-page',
@@ -83,18 +80,18 @@ export function Chapter() {
 	)
 
 	return (
-		<div className={s.chapterContainer} ref={pageRef}>
+		<main className={styles.chapterContainer} ref={pageRef}>
 			<ChapterConfigs
 				currentZoom={zoom}
 				onChangeZoom={handleZoomChange}
 				currentViewMode={viewMode}
 				onChangeViewMode={handleChangeViewMode}
 			/>
-			<div>
-				<h1 className="title">{currentChapter.subtitle}</h1>
+			<div className={styles.chapterTitleDiv}>
+				<h1 className={styles.chapterContentTitle}>{currentChapter.title}: {currentChapter.subtitle}</h1>
 			</div>
-			<div>
-				<select className="chapter-select" value={currentChapter.id} onChange={handleChapterChange}>
+			<div className={styles.chapterSelectDiv}>
+				<select className={styles.chapterContentSelect} value={currentChapter.id} onChange={handleChapterChange}>
 					{chapters.map((chapter) => (
 						<option key={chapter.id} value={chapter.id}>
 							{chapter.title}
@@ -104,28 +101,32 @@ export function Chapter() {
 			</div>
 
 			{viewMode === VIEW_MODE.PAGE_BY_PAGE && (
-				<div className={s.chapterWrapper}>
-					<ChapterImage
-						zoom={zoom}
-						chapter={currentChapter.id}
-						index={currentPage + 1}
-						image={currentChapter.pages[currentPage].source}
-						alt={`Página ${currentPage + 1}`}
-					/>
-					<motion.div className={s.buttonsChapterPage} initial={{ bottom: '0px' }} animate={{ bottom: '50px' }}>
-						<button type="button" className="prev-button" onClick={prevPage} disabled={currentPage === 0}>
-							<FaAngleLeft />
-						</button>
-						<button
-							type="button"
-							className="next-button"
-							onClick={nextPage}
-							disabled={currentPage === currentChapter.pages.length - 1}
-						>
-							<FaAngleRight />
-						</button>
-					</motion.div>
-				</div>
+				<>
+					<div className={styles.pageCount}>
+						{currentPage + 1} / {currentChapter.pages.length}
+					</div>
+					<div className={styles.displayChapterDiv}>
+						<ChapterImage
+							zoom={zoom}
+							chapter={currentChapter.id}
+							index={currentPage + 1}
+							image={currentChapter.pages[currentPage].source}
+							alt={`Página ${currentPage + 1}`}
+						/>
+						<div className={styles.actionButtonsGroup}>
+							<button className={styles.actionButtonChapter}
+								type="button"
+								onClick={prevPage}
+								disabled={currentPage === 0}
+							/>
+							<button className={styles.actionButtonChapter}
+								type="button"
+								onClick={nextPage}
+								disabled={currentPage === currentChapter.pages.length - 1}
+							/>
+						</div>
+					</div>
+				</>
 			)}
 
 			{viewMode === VIEW_MODE.ALL_AT_ONCE && (
@@ -142,6 +143,6 @@ export function Chapter() {
 					))}
 				</div>
 			)}
-		</div>
+		</main>
 	)
 }

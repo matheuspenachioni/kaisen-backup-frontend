@@ -1,11 +1,3 @@
-.container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.imageContainer {
-	margin-top: 20px;
-	min-height: 600px;
+.widthImageChapter {
+	@apply w-full h-auto
 }

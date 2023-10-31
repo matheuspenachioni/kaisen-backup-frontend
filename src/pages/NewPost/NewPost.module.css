@@ -1,0 +1,39 @@
+.newPostContainer {
+    @apply pt-8 pb-24
+}
+
+.newPostContent {
+    @apply container mx-auto max-w-6xl bg-white p-6 rounded-lg shadow-md grid md:grid-cols-1 lg:grid-cols-2 gap-6
+}
+
+.newPostContentTitle {
+    @apply text-2xl font-bold text-gray-700 mb-4
+}
+
+.postLabel {
+    @apply block text-sm font-medium text-gray-600
+}
+
+.postInput {
+    @apply mt-2 p-2 w-full border rounded-md
+}
+
+.postInputFile {
+    @apply hidden
+}
+
+.addImageButton {
+    @apply mt-2 bg-green-700 w-full text-white px-4 py-2 rounded-md hover:bg-green-800 transition
+}
+
+.sendDataButton {
+    @apply mt-2 bg-blue-600 w-full text-white px-4 py-2 rounded-md hover:bg-blue-700 transition
+}
+
+.postField {
+    @apply mb-4
+}
+
+.previewImage{
+    @apply rounded-md
+}

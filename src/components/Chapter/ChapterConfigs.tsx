@@ -1,5 +1,5 @@
 import { VIEW_MODE, ViewModeKeys } from '@pages/index'
-import s from './ChapterConfigs.module.css'
+import styles from './ChapterConfigs.module.css'
 import { ReactComponent as HorizontalIcon } from '@assets/icons/horizontal-icon.svg'
 import { ReactComponent as VerticalIcon } from '@assets/icons/vertical-icon.svg'
 import { ReactComponent as ZoomInIcon } from '@assets/icons/zoom-in-icon.svg'
@@ -21,46 +21,46 @@ export function ChapterConfigs({
 
 	if (!isMobile) {
 		return (
-			<div className={s.container}>
+			<main className={styles.container}>
 				<button
 					type="button"
-					className={s.button}
+					className={styles.button}
 					onClick={() =>
 						onChangeViewMode(currentViewMode === VIEW_MODE.ALL_AT_ONCE ? VIEW_MODE.PAGE_BY_PAGE : VIEW_MODE.ALL_AT_ONCE)
 					}
 				>
 					{currentViewMode === VIEW_MODE.ALL_AT_ONCE ? (
-						<HorizontalIcon className={s.icon} />
+						<HorizontalIcon className={styles.icon} />
 					) : (
-						<VerticalIcon className={s.icon} />
+						<VerticalIcon className={styles.icon} />
 					)}
 				</button>
-				<div className={s.zoomContainer}>
-					<button type="button" className={s.button} onClick={() => onChangeZoom('negative')}>
-						<ZoomOutIcon className={s.zoomIcon} />
+				<div className={styles.zoomContainer}>
+					<button type="button" className={styles.button} onClick={() => onChangeZoom('negative')}>
+						<ZoomOutIcon className={styles.zoomIcon} />
 					</button>
 					{currentZoom * 100}%
-					<button type="button" className={s.button} onClick={() => onChangeZoom('positive')}>
-						<ZoomInIcon className={s.zoomIcon} />
+					<button type="button" className={styles.button} onClick={() => onChangeZoom('positive')}>
+						<ZoomInIcon className={styles.zoomIcon} />
 					</button>
 				</div>
-			</div>
+			</main>
 		)
 	}
 
 	return (
-		<div className={s.container}>
+		<div className={styles.container}>
 			<button
 				type="button"
-				className={s.button}
+				className={styles.button}
 				onClick={() =>
 					onChangeViewMode(currentViewMode === VIEW_MODE.ALL_AT_ONCE ? VIEW_MODE.PAGE_BY_PAGE : VIEW_MODE.ALL_AT_ONCE)
 				}
 			>
 				{currentViewMode === VIEW_MODE.ALL_AT_ONCE ? (
-					<HorizontalIcon className={s.icon} />
+					<HorizontalIcon className={styles.icon} />
 				) : (
-					<VerticalIcon className={s.icon} />
+					<VerticalIcon className={styles.icon} />
 				)}
 			</button>
 		</div>

@@ -1,0 +1,35 @@
+.chapterContainer {
+	@apply max-w-screen-sm mx-auto
+}
+
+.chapterTitleDiv {
+	@apply mt-4
+}
+
+.chapterContentTitle {
+	@apply text-2xl text-white font-bold
+}
+
+.chapterSelectDiv {
+	@apply my-4
+}
+
+.chapterContentSelect {
+	@apply block w-full appearance-none bg-white border border-gray-400 rounded p-2 text-gray-700
+}
+
+.pageCount {
+	@apply my-4 bg-zinc-900 p-2 text-center text-white
+}
+
+.displayChapterDiv {
+	@apply relative
+}
+
+.actionButtonsGroup {
+	@apply absolute inset-0 flex
+}
+
+.actionButtonChapter {
+	@apply w-1/2 flex justify-start items-center
+}

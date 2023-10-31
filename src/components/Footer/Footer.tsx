@@ -1,12 +1,13 @@
-import './Footer.css';
+import styles from './Footer.module.css'
 
 function Footer() {
     return (
-        <footer className="footer">
-            <span className="footer-info">Todos os direitos de Jujutsu Kaisen são reservados a Gege Akutami</span>
-            <span className="footer-info">Kaisen Backup</span>
-        </footer>
+        <div className={styles.baseFooter}>
+            <div className={styles.contentFooter}>
+                <p className={styles.textFooter}>© 2023 Kaisen Backup - Todos os Direitos Reservados.</p>
+            </div>
+        </div>
     )
 }
 
-export default Footer;
+export default Footer

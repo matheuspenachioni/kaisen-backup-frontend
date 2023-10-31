@@ -1,6 +1,7 @@
+import styles from './Login.module.css'
 import { useAuth } from '@hooks/useAuth'
-import './Login.css'
 import { Link, Navigate } from 'react-router-dom'
+import { FaAngleLeft } from 'react-icons/fa'
 
 export function Login() {
 	const { user, loading } = useAuth()
@@ -14,23 +15,36 @@ export function Login() {
 	}
 
 	return (
-		<main className="card">
-			<div className="titles-group">
-				<h1 className="title jujutsu-font">Kaisen Backup</h1>
-				<span className="subtitle">A maior comunidade brasileira de Jujutsu Kaisen</span>
+		<section className={styles.loginContainer}>
+			<div className={styles.loginContainerContent}>
+				<div className={styles.loginContentLeftSide}>
+					<h1 className={styles.loginTitle}>Login</h1>
+					<form action="#" method="POST">
+						<div className={styles.loginFormInputContainer}>
+							<label htmlFor="username" className={styles.loginFormLabel}>Usuário</label>
+							<input type="text" id="username" name="username" className={styles.loginFormInput} autoComplete='off' />
+						</div>
+						<div className={styles.loginFormInputContainer}>
+							<label htmlFor="password" className={styles.loginFormLabel}>Senha</label>
+							<input type="password" id="password" name="password" className={styles.loginFormInput} autoComplete='off' />
+						</div>
+						<div className={styles.loginFormInputContainer}>
+							<a href="#" className={styles.loginDefaultLink}>Esqueceu a senha?</a>
+						</div>
+						<button type="submit" className={styles.loginFormButton}>
+							Entrar
+						</button>
+					</form>
+					<div className={styles.loginFormInputContainer}>
+						<Link to="/" className={styles.loginReturnLink}> 
+							<FaAngleLeft className={styles.returnLink} /> Voltar
+						</Link>
+					</div>
+				</div>
+				<div className={styles.loginContentRightSide}>
+					<img src="https://c.wallhere.com/photos/3c/7a/Jujutsu_Kaisen_Sukuna_Ryomen_Sukuna_smiling_tattoo_pink_hair_undercut_hairstyle_red_background-2272316.jpg!d" alt="Imagem de Ryomen Sukuna sorrindo em meio a chamas" className={styles.loginImage} />
+				</div>
 			</div>
-			<div className="form-group">
-				<label htmlFor="username">Usuário</label>
-				<input type="text" id="username" />
-			</div>
-			<div className="form-group">
-				<label htmlFor="password">Senha</label>
-				<input type="password" id="password" />
-			</div>
-			<div className="form-button-group">
-				<button type="button">Entrar</button>
-				<Link to="#">Recuperar senha</Link>
-			</div>
-		</main>
+		</section>
 	)
 }

@@ -1,7 +1,7 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useRef, useEffect } from 'react'
 import { ChapterHistoryType } from '@hooks/index'
-import s from './ChapterImage.module.css'
+import styles from './ChapterImage.module.css'
 
 export function ChapterImage({
 	image,
@@ -44,15 +44,12 @@ export function ChapterImage({
 			observer.disconnect()
 		}
 	}, [index])
-
 	return (
-		<div id={`chapter-page${index}`} ref={imageRef} className={s.container}>
+		<div id={`chapter-page${index}`} ref={imageRef}>
 			<LazyLoadImage
 				width={`${100 * zoom}%`}
 				alt={alt}
-				effect="blur"
-				wrapperClassName={s.imageContainer}
-				wrapperProps={{ style: { display: 'flex', justifyContent: 'center' } }}
+				wrapperClassName={styles.widthImageChapter}
 				src={image}
 			/>
 		</div>
