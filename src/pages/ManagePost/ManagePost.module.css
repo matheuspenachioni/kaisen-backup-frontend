@@ -1,0 +1,55 @@
+.managePostContainer {
+    @apply pb-16 text-gray-600
+}
+
+.managePostTitle {
+    @apply text-4xl font-semibold text-white mb-4
+}
+
+.managePostContent {
+    @apply container  mx-auto px-5 py-10
+}
+
+.postsSection {
+    @apply -m-4 flex flex-wrap
+}
+
+.postCard {
+    @apply w-full p-4 md:w-1/2 lg:w-1/3
+}
+
+.postCardThumb {
+    @apply relative block h-48 overflow-hidden rounded
+}
+
+.postImage {
+    @apply block h-full w-full object-cover object-center cursor-pointer
+}
+
+.postInfo {
+    @apply mt-4
+}
+
+.postInfoTitle {
+    @apply text-lg font-medium text-white
+}
+
+.postInfoDate {
+    @apply mt-1 text-gray-300 flex block inline-flex items-center
+}
+
+.postInfoIcon {
+    @apply mr-1
+}
+
+.postButtons {
+    @apply mt-2 flex space-x-2;
+}
+
+.editButton {
+    @apply px-4 w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-700 cursor-pointer;
+}
+
+.deleteButton {
+    @apply px-4 w-full py-2 bg-red-500 text-white rounded hover:bg-red-700 cursor-pointer;
+}

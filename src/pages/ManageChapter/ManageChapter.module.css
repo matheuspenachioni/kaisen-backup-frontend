@@ -1,0 +1,47 @@
+.manageChapterContainer {
+    @apply pb-16 text-gray-600
+}
+
+.manageChapterTitle {
+    @apply text-4xl font-semibold text-white mb-4
+}
+
+.manageChapterContent {
+    @apply container mx-auto px-5 py-10
+}
+
+.chaptersSection {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4
+}
+
+.chapterCard {
+    @apply w-full bg-white p-2 rounded-md
+}
+
+.chapterInfo {
+    @apply mt-4
+}
+
+.chapterInfoTitle {
+    @apply text-lg font-medium text-black
+}
+
+.chapterInfoDate {
+    @apply mt-1 text-gray-700 inline-flex items-center
+}
+
+.chapterInfoIcon {
+    @apply mr-1
+}
+
+.chapterButtons {
+    @apply mt-2 flex space-x-2;
+}
+
+.editButton {
+    @apply px-4 w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-700 cursor-pointer;
+}
+
+.deleteButton {
+    @apply px-4 w-full py-2 bg-red-500 text-white rounded hover:bg-red-700 cursor-pointer;
+}
