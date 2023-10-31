@@ -1,0 +1,43 @@
+.homeContainer {
+	@apply min-h-screen text-gray-600 
+}
+
+.homeTitle {
+	@apply text-4xl font-semibold text-black mb-4
+}
+
+.homeContent {
+	@apply container bg-white mx-auto px-5 py-10
+}
+
+.postsSection {
+	@apply -m-4 flex flex-wrap
+}
+
+.postCard {
+	@apply w-full p-4 md:w-1/2 lg:w-1/3 xl:w-1/4
+}
+
+.postCardThumb {
+	@apply relative block h-48 overflow-hidden rounded
+}
+
+.postImage {
+	@apply block h-full w-full object-cover object-center cursor-pointer
+}
+
+.postInfo {
+	@apply mt-4
+}
+
+.postInfoTitle {
+	@apply text-lg font-medium text-gray-900
+}
+
+.postInfoDate {
+	@apply mt-1 flex block inline-flex items-center
+}
+
+.postInfoIcon {
+	@apply mr-1
+}

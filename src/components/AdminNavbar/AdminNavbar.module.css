@@ -1,0 +1,23 @@
+.adminNavbarContainer {
+    @apply fixed bottom-0 left-0 z-50 w-full h-16 bg-black
+}
+
+.adminNavbarContent {
+    @apply grid h-full max-w-lg grid-cols-4 mx-auto font-medium
+}
+
+.adminNavbarLink {
+    @apply inline-flex flex-col items-center justify-center px-5 hover:bg-gray-800
+}
+
+.adminNavbarIcon {
+    @apply w-6 h-6 mb-1 text-gray-400 group-hover:text-white
+}
+
+.adminNavbarSpan {
+    @apply text-sm text-gray-400 group-hover:text-white
+}
+
+.adminNavbarLogoutIcon {
+    @apply w-6 h-6 mb-1 text-red-500 group-hover:text-red-700
+}

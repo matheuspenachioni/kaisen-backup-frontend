@@ -1,0 +1,15 @@
+.guideContainer {
+    @apply pt-8 pb-24
+}
+
+.guideContent {
+    @apply mx-auto max-w-6xl bg-white p-6 rounded-lg shadow-md
+}
+
+.guideContentTitle {
+    @apply text-2xl font-bold
+}
+
+.guideContentSpan {
+    @apply text-gray-600
+}

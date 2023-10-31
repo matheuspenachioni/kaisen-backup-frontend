@@ -1,0 +1,15 @@
+.universeContainer {
+    @apply pt-8 pb-24
+}
+
+.universeContent {
+    @apply mx-auto max-w-6xl bg-white p-6 rounded-lg shadow-md
+}
+
+.universeContentTitle {
+    @apply text-2xl font-bold
+}
+
+.universeContentSpan {
+    @apply text-gray-600
+}

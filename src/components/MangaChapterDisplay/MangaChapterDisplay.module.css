@@ -1,0 +1,36 @@
+.image {
+	object-fit: cover;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.icon {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	bottom: 10px;
+	right: 5px;
+	z-index: 2;
+	color: green;
+}
+
+.subtitle {
+	position: absolute;
+	bottom: 10px;
+	right: 5px;
+	z-index: 2;
+	color: white;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 0.5rem;
+	border-radius: 10px;
+	background-color: rgb(107, 27, 255);
+}

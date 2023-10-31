@@ -4,6 +4,7 @@ export function useChapters() {
 			id: '236',
 			title: 'Capítulo nº236',
 			subtitle: 'Para o Sul',
+			order: 236,
 			pages: [
 				{
 					page: '01',
@@ -78,6 +79,7 @@ export function useChapters() {
 		{
 			id: '237',
 			title: 'Capítulo nº237',
+			order: 237,
 			subtitle: 'A Batalha na Terra Assombrada de Shinjuku (14)',
 			pages: [
 				{
@@ -161,6 +163,7 @@ export function useChapters() {
 		{
 			id: '238',
 			title: 'Capítulo nº238',
+			order: 238,
 			subtitle: 'A Batalha na Terra Assombrada de Shinjuku (15)',
 			pages: [
 				{
@@ -236,6 +239,7 @@ export function useChapters() {
 		{
 			id: '239',
 			title: 'Capítulo nº239',
+			order: 239,
 			subtitle: 'A Batalha na Terra Assombrada de Shinjuku (16)',
 			pages: [
 				{

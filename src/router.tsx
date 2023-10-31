@@ -1,6 +1,6 @@
-import Navbar from '@components/Navbar/Navbar'
+import NavBar from '@components/Navbar/NavBar'
 import React, { Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import {
 	Anime,
 	Chapter,
@@ -12,16 +12,18 @@ import {
 	NewChapter,
 	NewPost,
 	Universe,
-	Dashboard
+	Dashboard,
+	ManageChapter,
+	ManagePost
 } from '@pages/index'
-import Footer from '@components/Footer/Footer'
-import Loading from './screens/loading/Loading/Loading'
 
 function RouterAllRoutes() {
+	const location = useLocation()
+
 	return (
 		<>
-			<Navbar />
-			<Suspense fallback={<Loading />}>
+			{location.pathname !== '/login' && <NavBar />}
+			<Suspense fallback={<div> Loading ...</div>}>
 				<Routes>
 					{/* User Routes */}
 					<Route path="/" element={<Home />} />
@@ -30,16 +32,16 @@ function RouterAllRoutes() {
 					<Route path="/comunidade" element={<Community />} />
 					<Route path="/guia" element={<Guide />} />
 					<Route path="/universo" element={<Universe />} />
-					<Route path="/chapter/:chapterId" element={<Chapter />} />
+					<Route path="/capitulo/:id" element={<Chapter />} />
 					{/* Admin Routes */}
 					<Route path="/login" element={<Login />} />
 					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/postagens" element={<ManagePost />} />
+					<Route path="/capitulos" element={<ManageChapter />} />
 					<Route path="/novo-post" element={<NewPost />} />
 					<Route path="/novo-capitulo" element={<NewChapter />} />
-					{/* 1- Fazer um AuthGuard para essas 3 rotas */}
 				</Routes>
 			</Suspense>
-			<Footer />
 		</>
 	)
 }

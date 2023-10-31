@@ -1,0 +1,23 @@
+.communityContainer {
+    @apply py-8
+}
+
+.communityContent {
+    @apply mx-auto max-w-6xl bg-white p-6 rounded-lg shadow-md
+}
+
+.communityContentTitle {
+    @apply text-2xl font-bold
+}
+
+.communityContentSpan {
+    @apply text-gray-600
+}
+
+.socialMediaGroup {
+    @apply grid grid-cols-1 md:grid-cols-4 gap-4 my-4 mx-auto
+}
+
+.socialMediaIcon {
+    @apply w-24 mx-auto hover:scale-110 transition
+}

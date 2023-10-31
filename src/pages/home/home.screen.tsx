@@ -1,37 +1,41 @@
-import './index.css'
+import styles from './Home.module.css'
+import { Link } from 'react-router-dom'
+import { FaRegCalendarAlt } from 'react-icons/fa'
 
 export function Home() {
+	const fakePosts = [
+		{ id: 1, thumbnail: 'https://dummyimage.com/420x260', title: 'Spoilers do Cap. 240', date: '24/10/2023' },
+		{ id: 2, thumbnail: 'https://dummyimage.com/420x260', title: 'Spoilers do Cap. 239', date: '18/10/2023' },
+		{ id: 4, thumbnail: 'https://dummyimage.com/420x260', title: 'Spoilers do Cap. 238', date: '04/10/2023' },
+		{ id: 5, thumbnail: 'https://dummyimage.com/420x260', title: 'Spoilers do Cap. 237', date: '27/09/2023' },
+		{ id: 3, thumbnail: 'https://dummyimage.com/420x260', title: 'Adeus amigos! Eu vou me...', date: '20/09/2023' },
+		{ id: 6, thumbnail: 'https://dummyimage.com/420x260', title: 'Spoilers do Cap. 236', date: '20/09/2023' },
+		{ id: 7, thumbnail: 'https://dummyimage.com/420x260', title: 'Memes da vitória do Gojo', date: '13/09/2023' },
+		{ id: 8, thumbnail: 'https://dummyimage.com/420x260', title: 'Spoilers do Cap. 235', date: '06/09/2023' },
+	]
+
 	return (
-		<main>
-			<div>
-				<h1 className="title">Seja bem-vindo(a) ao Kaisen Backup!</h1>
-				<span className="subtitle">A maior comunidade brasileira de Jujutsu Kaisen...</span>
-			</div>
-			<div className="events-container">
-				<div className="event-card">
-					<h1 className="card-title">Desafio do Shape Aesthetic</h1>
-					<hr />
-					<span className="subtitle">O desafio já começou, você vai ficar de fora?</span>
-					<p>
-						Desde a volta da segunda temporada do anime até o seu término, os participantes devem escolher um personagem
-						de Jujutsu Kaisen como base para seu shape. Lembrando-se sempre de ter uma uma alimentação equilibrada para
-						suprir o seu potencial de treino, não fazer amor com o suco, além de uma ficha de treinamento adequada para
-						seu ritmo. Acesse nosso servidor do Discord para mais informações
-					</p>
+		<main className={styles.homeContainer}>
+			<section className={styles.homeContent}>
+				<h1 className={styles.homeTitle}>Postagens</h1>
+				<div className={styles.postsSection}>
+					{fakePosts.map(fakePost => (
+						<Link to="/" className={styles.postCard}>
+							<div className={styles.postCardThumb}>
+								<img className={styles.postImage} src={fakePost.thumbnail} alt="Descrição da imagem" />
+							</div>
+							<div className={styles.postInfo}>
+								<h2 className={styles.postInfoTitle}>
+									{fakePost.title}
+								</h2>
+								<div className={styles.postInfoDate}>
+									<FaRegCalendarAlt className={styles.postInfoIcon} /> {fakePost.date}
+								</div>
+							</div>
+						</Link>
+					))}
 				</div>
-			</div>
-			<div className="info-container">
-				<div className="event-card">
-					<h1 className="card-title">Mangá</h1>
-					<hr />
-					<span className="subtitle">O Capítulo 238 foi o último lançado até o momento</span>
-				</div>
-				<div className="event-card">
-					<h1 className="card-title">Anime</h1>
-					<hr />
-					<span className="subtitle">O Episódio 12 foi o último lançado até o momento</span>
-				</div>
-			</div>
+			</section>
 		</main>
 	)
 }

@@ -1,0 +1,39 @@
+.dashboardContainer {
+    @apply bg-zinc-800
+}
+
+.dashboardContent {
+    @apply sm:flex relative
+}
+
+.dashboardFakeChat {
+    @apply container px-6 pt-10 pb-20 md:pb-10 mx-auto text-white
+}
+
+.fakeChatCard {
+    @apply flex items-center space-x-4 my-4
+}
+
+.fakeChatImage {
+    @apply rounded-full w-14
+}
+
+.fakeChatUsername {
+    @apply font-bold
+}
+
+.systemOutput {
+    @apply my-2 bg-zinc-900 p-1 rounded-md
+}
+
+.systemOutputContent {
+    @apply font-bold ml-2
+}
+
+.typingOutput {
+    @apply fixed bottom-16 left-0 p-1 z-50 w-full text-center bg-zinc-900 text-white
+}
+
+.typingOutputContent {
+    @apply font-bold
+}

@@ -1,0 +1,31 @@
+.animeContainer {
+    @apply py-8
+}
+
+.animeContent {
+    @apply mx-auto max-w-6xl bg-white p-6 rounded-lg shadow-md
+}
+
+.animeContentTitle {
+    @apply text-2xl font-bold
+}
+
+.animeContentSpan {
+    @apply text-gray-600
+}
+
+.animesGroup {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8 my-4
+}
+
+.animesCard {
+    @apply transform hover:scale-105 transition text-center
+}
+
+.animesCardLink {
+    @apply text-xl font-semibold
+}
+
+.animesCardImage {
+    @apply rounded-md
+}
