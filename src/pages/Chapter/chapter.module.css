@@ -1,0 +1,17 @@
+.buttonsChapterPage {
+  position: fixed;
+  z-index: 3;
+  right: calc(50% - 100px);
+  width: 200px;
+  bottom: 0;
+}
+
+.chapterContainer {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapterWrapper {
+  margin: auto 0;
+}
