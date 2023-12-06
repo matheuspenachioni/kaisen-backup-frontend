@@ -1,12 +1,20 @@
 import { createContext } from 'react'
-const USER = {
-	id: '',
-	name: ''
+
+interface IUser {
+  id: string
+  name: string
 }
-export const AUTH_CONTEXT_INITIAL_STATE = {
-	user: USER,
-	loading: true,
-	setUser: (user: typeof USER) => {}
+
+interface IAuthContextState {
+  user: IUser
+	loading: boolean
+  setUser: (user: IUser) => void
+}
+
+export const AUTH_CONTEXT_INITIAL_STATE: IAuthContextState = {
+  user: { id: '', name: '' },
+  loading: true,
+  setUser: () => {}
 }
 
 export const AuthContext = createContext(AUTH_CONTEXT_INITIAL_STATE)

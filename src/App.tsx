@@ -5,13 +5,13 @@ import Footer from './components/Footer/Footer'
 import { RouterAllRoutes } from './router'
 
 function App() {
-	return (
-		<>
-			<Navbar />
-			<RouterAllRoutes />
-			<Footer />
-		</>
-	)
+  return (
+    <>
+      <Navbar />
+      <RouterAllRoutes />
+      <Footer />
+    </>
+  )
 }
 
 export default App
