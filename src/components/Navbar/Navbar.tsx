@@ -1,11 +1,11 @@
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import { useRef } from 'react'
+import { LegacyRef, useRef } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { useAuth } from '@hooks/useAuth'
 
 function Navbar() {
-  const navRef = useRef()
+  const navRef = useRef<HTMLElement>()
   const { user } = useAuth()
 
   const showNavbar = () => {
@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <header>
       <h3 className="jujutsu-font">KAISEN BACKUP</h3>
-      <nav ref={navRef}>
+      <nav ref={navRef as LegacyRef<HTMLElement>}>
         <Link to="/">Início</Link>
         <Link to="/anime">Anime</Link>
         <Link to="/manga">Mangá</Link>
