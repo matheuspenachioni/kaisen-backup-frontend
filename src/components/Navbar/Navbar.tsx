@@ -25,7 +25,7 @@ function Navbar() {
         {/* Deve aparecer apenas para o Admin quando logado */}
         {user.id && (
           <Link className="admin-option" to="/dashboard">
-						Gerenciar
+            Gerenciar
           </Link>
         )}
         <button type="button" className="nav-btn nav-close-btn" onClick={showNavbar}>

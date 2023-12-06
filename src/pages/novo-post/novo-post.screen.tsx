@@ -23,8 +23,8 @@ export function NewPost() {
           <div>
             <h1 className="title">Nova Postagem</h1>
             <span className="subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tenetur rem obcaecati optio illo alias fugiat
-							ipsum? Quas neque amet quasi est quis fuga odio, aliquid ab perspiciatis tenetur nobis?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tenetur rem obcaecati optio illo alias fugiat
+              ipsum? Quas neque amet quasi est quis fuga odio, aliquid ab perspiciatis tenetur nobis?
             </span>
           </div>
           <div className="post-container">
@@ -40,7 +40,7 @@ export function NewPost() {
               </div>
               <div className="post-input">
                 <label className="thumbnail-input" htmlFor="thumbnail">
-									Enviar Imagem
+                  Enviar Imagem
                 </label>
                 <input type="file" className="post-thumbnail" id="thumbnail" onChange={handleImageChange} />
               </div>

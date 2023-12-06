@@ -7,7 +7,7 @@ interface IUser {
 
 interface IAuthContextState {
   user: IUser
-	loading: boolean
+  loading: boolean
   setUser: (user: IUser) => void
 }
 

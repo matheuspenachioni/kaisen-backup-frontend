@@ -11,23 +11,23 @@ export function Dashboard() {
           <div>
             <h1 className="title">Dashboard</h1>
             <span className="subtitle">
-							Jesus, Maria e José! Look at him! Cássio Bérgamo? Frostezor? Como você cresceu tanto, garoto? Está tomando
-							danone, o suco? Quem você pensa que é, frost? Chris Bumstead, o Cbum? Natural ou fake natty? O meu
-							veredito...? Natural! Rodrigo Góes, out...
+              Jesus, Maria e José! Look at him! Cássio Bérgamo? Frostezor? Como você cresceu tanto, garoto? Está tomando
+              danone, o suco? Quem você pensa que é, frost? Chris Bumstead, o Cbum? Natural ou fake natty? O meu
+              veredito...? Natural! Rodrigo Góes, out...
             </span>
             <div className="admin-buttons">
               <Link className="admin-links" to="/novo-capitulo">
-								Novo Capítulo
+                Novo Capítulo
               </Link>
               <Link className="admin-links" to="/novo-post">
-								Nova Postagem
+                Nova Postagem
               </Link>
             </div>
           </div>
           <div>
             <h1 className="title">Capítulos</h1>
             <span className="subtitle">
-							Aqui devem ficar os capítulos já lançados e com uma opção de exclusão. Exemplo:
+              Aqui devem ficar os capítulos já lançados e com uma opção de exclusão. Exemplo:
             </span>
             {/* Obviamente é um exemplo, não se refere ao modelo final */}
             <div className="dashboard-cards">
@@ -83,7 +83,7 @@ export function Dashboard() {
           <div className="dashboard-posts">
             <h1 className="title">Postagens</h1>
             <span className="subtitle">
-							Aqui devem ficar as postagens e com uma opção de exclusão ou edição. Exemplo:
+              Aqui devem ficar as postagens e com uma opção de exclusão ou edição. Exemplo:
             </span>
             {/* Obviamente é um exemplo, não se refere ao modelo final */}
             <div className="dashboard-cards">

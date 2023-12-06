@@ -26,8 +26,8 @@ export function NewChapter() {
           <div>
             <h1 className="title">Novo Capítulo</h1>
             <span className="subtitle">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tenetur rem obcaecati optio illo alias fugiat
-							ipsum? Quas neque amet quasi est quis fuga odio, aliquid ab perspiciatis tenetur nobis?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tenetur rem obcaecati optio illo alias fugiat
+              ipsum? Quas neque amet quasi est quis fuga odio, aliquid ab perspiciatis tenetur nobis?
             </span>
           </div>
           <div className="chap-container">
@@ -44,10 +44,10 @@ export function NewChapter() {
             </div>
             <div className="chap-buttons">
               <button type="button" onClick={addPage}>
-								Adicionar Página
+                Adicionar Página
               </button>
               <button type="button" onClick={removePage}>
-								Remover Página
+                Remover Página
               </button>
             </div>
             <div className="preview-container">

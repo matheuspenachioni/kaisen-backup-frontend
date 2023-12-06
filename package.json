@@ -1,47 +1,47 @@
 {
-	"name": "kaisen-front",
-	"private": true,
-	"version": "1.0.0",
-	"type": "module",
-	"authors": [
-		{
-			"name": "Juan Almeida",
-			"email": "juanalgal2@gmail.com",
-			"url": "https://github.com/juanrtalmeida"
-		}
-	],
-	"scripts": {
-		"dev": "vite",
-		"build": " tsc && vite build",
-		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-		"preview": "vite preview"
-	},
-	"dependencies": {
-		"@nabla/vite-plugin-eslint": "^1.5.0",
-		"@types/react-router-dom": "^5.3.3",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-icons": "^4.11.0",
-		"react-router-dom": "^6.16.0",
-		"vite-plugin-svgr": "^4.1.0"
-	},
-	"devDependencies": {
-		"@types/node": "^20.8.6",
-		"@types/react": "^18.2.15",
-		"@types/react-dom": "^18.2.7",
-		"@typescript-eslint/eslint-plugin": "^6.8.0",
-		"@vitejs/plugin-react": "^4.0.3",
-		"eslint": "^8.51.0",
-		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-prettier": "^5.0.1",
-		"eslint-plugin-react": "^7.33.2",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"eslint-plugin-react-refresh": "^0.4.3",
-		"eslint-plugin-unused-imports": "^3.0.0",
-		"prettier": "^3.0.3",
-		"ts-node": "^10.9.1",
-		"typescript": "^5.2.2",
-		"vite": "^4.4.5",
-		"vite-plugin-compression": "^0.5.1"
-	}
+  "name": "kaisen-front",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "authors": [
+    {
+      "name": "Juan Almeida",
+      "email": "juanalgal2@gmail.com",
+      "url": "https://github.com/juanrtalmeida"
+    }
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": " tsc && vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@nabla/vite-plugin-eslint": "^1.5.0",
+    "@types/react-router-dom": "^5.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "react-router-dom": "^6.16.0",
+    "vite-plugin-svgr": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.6",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.5",
+    "vite-plugin-compression": "^0.5.1"
+  }
 }

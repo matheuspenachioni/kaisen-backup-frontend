@@ -57,7 +57,7 @@ export function Chapter() {
           onClick={() => handleChangeViewMode(VIEW_MODE.PAGE_BY_PAGE)}
           style={viewMode === VIEW_MODE.PAGE_BY_PAGE ? { background: 'gray', color: 'white' } : {}}
         >
-					Leitura Horizontal
+          Leitura Horizontal
         </button>
         <button
           type="button"
@@ -65,7 +65,7 @@ export function Chapter() {
           onClick={() => handleChangeViewMode(VIEW_MODE.ALL_AT_ONCE)}
           style={viewMode === VIEW_MODE.ALL_AT_ONCE ? { background: 'gray', color: 'white' } : {}}
         >
-					Leitura Vertical
+          Leitura Vertical
         </button>
 
         <select className="chapter-select" value={currentChapter.id} onChange={handleChapterChange}>

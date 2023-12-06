@@ -5,9 +5,9 @@ export function Community() {
     <main>
       <h1 className="title">Comunidade</h1>
       <span className="subtitle">
-				Quer ficar por dentro das discussões sobre os capítulos ou episódios mais recentes de Jujutsu Kaisen, das
-				teorias mais mirabolantes e dos memes sem pé e nem cabeça, além de fazer novas amizades? Venha interagir com a
-				gente!
+        Quer ficar por dentro das discussões sobre os capítulos ou episódios mais recentes de Jujutsu Kaisen, das
+        teorias mais mirabolantes e dos memes sem pé e nem cabeça, além de fazer novas amizades? Venha interagir com a
+        gente!
       </span>
       <div>
         <h1 className="title">Redes Sociais</h1>

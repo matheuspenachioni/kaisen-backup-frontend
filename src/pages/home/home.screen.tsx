@@ -13,10 +13,10 @@ export function Home() {
           <hr />
           <span className="subtitle">O desafio já começou, você vai ficar de fora?</span>
           <p>
-						Desde a volta da segunda temporada do anime até o seu término, os participantes devem escolher um personagem
-						de Jujutsu Kaisen como base para seu shape. Lembrando-se sempre de ter uma uma alimentação equilibrada para
-						suprir o seu potencial de treino, não fazer amor com o suco, além de uma ficha de treinamento adequada para
-						seu ritmo. Acesse nosso servidor do Discord para mais informações
+            Desde a volta da segunda temporada do anime até o seu término, os participantes devem escolher um personagem
+            de Jujutsu Kaisen como base para seu shape. Lembrando-se sempre de ter uma uma alimentação equilibrada para
+            suprir o seu potencial de treino, não fazer amor com o suco, além de uma ficha de treinamento adequada para
+            seu ritmo. Acesse nosso servidor do Discord para mais informações
           </p>
         </div>
       </div>
