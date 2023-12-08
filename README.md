@@ -1,8 +1,16 @@
-# React + Vite
+# Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Definições
 
-Currently, two official plugins are available:
+- Css Modules
+- PascalCase para componentes e pastas
+- Svg pra icones
+- Imagens com no maximo 100kb (Diminuir tamanho no figma e passar no [tiny png](https://tinypng.com/))
+- Webp parar as imagens
+- Lazy loading das imagens
+- Infinity Scroll para carregamento
+- Componentes com syntax `nameofcompo.component.tsx` e Screens com `nameofscreen.screen.tsx`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Ideais possíveis
+
+- Transformar o projeto em screen reader friendly

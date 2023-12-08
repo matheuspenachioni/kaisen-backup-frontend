@@ -1,0 +1,84 @@
+.chap-input label {
+  display: block;
+  margin: 0.5rem;
+}
+
+.new-chap-form label {
+  display: block;
+  margin: 0.5rem;
+}
+
+.chap-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+#chap-title,
+#chap-subtitle,
+.chap-page {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.thumbnail-input {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  max-width: 100%;
+  background-color: #333;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-align: center;
+  display: block;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.preview-container {
+  margin-top: 1rem;
+}
+
+.chap-image-preview {
+  width: 30%;
+  height: auto;
+}
+
+.input-column,
+.image-column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.input-column {
+  width: 100%;
+}
+
+.image-column {
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilo para telas médias */
+@media (min-width: 768px) {
+  .chap-buttons {
+    justify-content: initial;
+  }
+
+  .input-column, .image-column {
+    width: 50%;
+  }
+}
+
+/* Estilo para telas grandes */
+@media (min-width: 1200px) {
+  .input-column, .image-column {
+    width: 50%;
+  }
+}
